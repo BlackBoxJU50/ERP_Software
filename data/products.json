@@ -1,0 +1,66 @@
+[
+  {
+    "code": "SH001",
+    "name": "Classic White Shirt",
+    "category": "Shirts",
+    "sub_type": "Formal",
+    "price": 850.0,
+    "stock_qty": 30
+  },
+  {
+    "code": "SH002",
+    "name": "Oxford Blue Shirt",
+    "category": "Shirts",
+    "sub_type": "Casual",
+    "price": 950.0,
+    "stock_qty": 20
+  },
+  {
+    "code": "PT001",
+    "name": "Slim Fit Chinos",
+    "category": "Pants",
+    "sub_type": "Casual",
+    "price": 1200.0,
+    "stock_qty": 15
+  },
+  {
+    "code": "PT002",
+    "name": "Formal Black Trousers",
+    "category": "Pants",
+    "sub_type": "Formal",
+    "price": 1400.0,
+    "stock_qty": 12
+  },
+  {
+    "code": "JK001",
+    "name": "Denim Jacket",
+    "category": "Jackets",
+    "sub_type": "Casual",
+    "price": 2500.0,
+    "stock_qty": 6
+  },
+  {
+    "code": "JK002",
+    "name": "Wool Blazer",
+    "category": "Jackets",
+    "sub_type": "Formal",
+    "price": 3800.0,
+    "stock_qty": 5
+  },
+  {
+    "code": "KU001",
+    "name": "Panjabi (White)",
+    "category": "Ethnic",
+    "sub_type": "Panjabi",
+    "price": 1100.0,
+    "stock_qty": 25
+  },
+  {
+    "code": "KU002",
+    "name": "Panjabi (Navy)",
+    "category": "Ethnic",
+    "sub_type": "Panjabi",
+    "price": 1150.0,
+    "stock_qty": 18
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "emp_id": "E001",
+    "name": "Rafiq Ahmed",
+    "role": "Manager",
+    "salary": 55000.00
+  },
+  {
+    "emp_id": "E002",
+    "name": "Sadia Islam",
+    "role": "Senior Sales Staff",
+    "salary": 32000.00
+  },
+  {
+    "emp_id": "E003",
+    "name": "Tanvir Hossain",
+    "role": "Sales Staff",
+    "salary": 25000.00
+  },
+  {
+    "emp_id": "E004",
+    "name": "Mitu Begum",
+    "role": "Sales Staff",
+    "salary": 25000.00
+  },
+  {
+    "emp_id": "E005",
+    "name": "Karim Mia",
+    "role": "Inventory Staff",
+    "salary": 22000.00
+  }
+]
