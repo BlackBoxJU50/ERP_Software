@@ -109,3 +109,51 @@ class JSONRepository(BaseRepository):
             "billed_by": sale.billed_by,
         })
         self._write("sales.json", raw)
+    
+    def record_attendance(self, emp_id: str, date: date, status: str):
+        raw = self._read("attendance.json")
+        raw.append({
+            "emp_id": emp_id,
+            "date": date.isoformat(),
+            "status": status
+        })
+        self._write("attendance.json", raw) 
+
+    def get_attendance_by_employee(self, emp_id: str):
+        raw = self._read("attendance.json")
+        return [r for r in raw if r["emp_id"] == emp_id]   
+    
+    def get_attendance_by_date(self, date: date):
+        raw = self._read("attendance.json")
+        return [r for r in raw if r["date"] == date.isoformat()]
+
+    def get_sales_between_dates(self, start_date: date, end_date: date):
+        raw = self._read("sales.json")
+        products = {p.code: p for p in self.get_all_products()}
+        sales = []
+        for s in raw:
+            sale_date = date.fromisoformat(s["date"])
+            if start_date <= sale_date <= end_date:
+                items = [
+                    SaleItem(
+                        product=products[i["product_code"]],
+                        quantity=int(i["quantity"]),
+                    )
+                    for i in s["items"]
+                    if i["product_code"] in products
+                ]
+                sales.append(
+                    Sale(
+                        sale_id=s["sale_id"],
+                        date=sale_date,
+                        items=items,
+                        subtotal=float(s["subtotal"]),
+                        tax=float(s["tax"]),
+                        total=float(s["total"]),
+                        billed_by=s["billed_by"],
+                    )
+                )
+        return sales
+      
+    
+ 

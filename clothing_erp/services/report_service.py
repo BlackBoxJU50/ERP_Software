@@ -1,5 +1,6 @@
 from clothing_erp.repositories.json_repository import JSONRepository
 from clothing_erp.config import TAX_RATE, CURRENCY
+from datetime import date
 
 
 class ReportService:
@@ -36,3 +37,24 @@ class ReportService:
             "tax_collected": round(tax_collected, 2),
             "grand_total": round(revenue + tax_collected, 2),
         }
+    def get_sales_summary_between_dates(self, start_date: date, end_date: date) -> dict:
+        sales = self.repository.get_sales_between_dates(start_date, end_date)
+
+        total_items = 0
+        revenue = 0.0
+        tax_collected = 0.0
+        
+        for sale in sales:
+            for item in sale.items:
+                total_items += item.quantity
+            revenue += sale.subtotal
+            tax_collected += sale.tax
+
+        return {
+            "total_sales": len(sales),
+            "total_items": total_items,
+            "revenue": round(revenue, 2),
+            "tax_collected": round(tax_collected, 2),
+            "grand_total": round(revenue + tax_collected, 2),
+        }
+

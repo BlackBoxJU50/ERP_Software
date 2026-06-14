@@ -32,6 +32,8 @@ class Sale:
     total: float
     billed_by: str
 
+# i want to track how many items are sold in a month
+
 
 @dataclass(frozen=True)
 class Employee:
@@ -39,3 +41,10 @@ class Employee:
     name: str
     role: str
     salary: float
+   
+
+@dataclass
+class AttendanceRecord:
+    emp_id: str
+    date: date
+    status: str  
